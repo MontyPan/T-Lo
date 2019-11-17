@@ -8,7 +8,7 @@ public class TaskLoop {
 
 		for (int i = 0; i < input; i++) {
 			for (int ii = 0;ii < input; ii++) {
-			System.out.print("*" );	//不會換行
+				System.out.print("*" );	//不會換行
 			}
 			System.out.println();	//換行
 		}
