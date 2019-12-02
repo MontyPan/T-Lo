@@ -10,23 +10,24 @@ public class Fibonacci {
 	}
 
 	/**
-	 * a[n] = a[n-1] + a[n-1] → 應該是 a[n] = a[n-1] + a[n-2] ?
+	 * a[n] = a[n-1] + a[n-2]
 	 * 
 	 * @return 第 n 項的值
+	 * forLoop() 可能會有哪些問題或是不討 caller 喜愛的部份?
+	 * → 相較於 while loop 需要多設立 for ( S1; S2; S3) 所使用的變數來控制 loop 次數
 	 */
-	
 	private static int forLoop(int a0, int a1, int n) {
 		int result = 0;
-		if (n > 2) {
+		if (n == 1) {
+			result = a0;
+		} else if (n == 2) {
+			result = a1;
+		} else if (n > 2) {
 			for (int i = 1; i < n; i++) {
 				result = a0 + a1;
 				a0 = a1;
 				a1 = result;
 			}
-		} else if (n == 2) {
-			result = a1;
-		} else if (n == 1) {
-			result = a0;
 		}
 		return result;
 	}
