@@ -3,7 +3,7 @@ package lo.basic;
 public class TaskLoop {
 	public static void main(String[] args) {
 
-		int totalInput = 2;
+		int totalInput = 5;
 		issue5(totalInput);
 		issue7_1(totalInput);
 		issue7_2(totalInput);
@@ -75,11 +75,13 @@ public class TaskLoop {
 	}
 	private static void issue7_4(int input) {
 		System.out.println("start_4");
-		for (int i = 1; i < input * 2; i++) {
+		int a = input * 2;
+		for (int i = 1; i < a; i++) {
 		    for (int ii = 0; ii < i && i <= input; ii++) {
 		        System.out.print("*");
 		    }
-		    for (int ii = input * 2 - i; ii > 0 && i > input; ii--) {
+		    for (int ii = a - i; ii > 0 && i > input; ii--) {
+		    //for (int ii = i; a - ii > 0 && i > input; ii++) {
 		        System.out.print("*");
 		    }
 		    System.out.println();
