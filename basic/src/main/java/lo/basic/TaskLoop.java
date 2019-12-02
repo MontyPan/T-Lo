@@ -9,6 +9,7 @@ public class TaskLoop {
 		issue7_2(totalInput);
 		issue7_3(totalInput);
 		issue7_4(totalInput);
+		issue7_5(totalInput);
 	}
 
 	private static void issue5(int input) {
@@ -73,19 +74,33 @@ public class TaskLoop {
 		}
 		System.out.println("end_3");
 	}
+
 	private static void issue7_4(int input) {
 		System.out.println("start_4");
 		int a = input * 2;
 		for (int i = 1; i < a; i++) {
-		    for (int ii = 0; ii < i && i <= input; ii++) {
-		        System.out.print("*");
-		    }
-		    for (int ii = a - i; ii > 0 && i > input; ii--) {
-		    //for (int ii = i; a - ii > 0 && i > input; ii++) {
-		        System.out.print("*");
-		    }
-		    System.out.println();
+			for (int ii = 0; ii < i && i <= input; ii++) {
+				System.out.print("*");
+			}
+			for (int ii = a - i; ii > 0 && i > input; ii--) {
+				System.out.print("*");
+			}
+			System.out.println();
 		}
 		System.out.println("end_4");
+	}
+
+	private static void issue7_5(int input) {
+		System.out.println("start_Sample");
+		for (int i = -input + 1; i < input; i++) {
+			for (int i2 = -i; i2 < input && i < 0; i2++) {
+				System.out.print("*");
+			}
+			for (int i2 = input; i2 > i && i >= 0; i2--) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		System.out.print("end_Sample");
 	}
 }
