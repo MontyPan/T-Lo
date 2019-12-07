@@ -14,7 +14,14 @@ public class Fibonacci {
 	 * 
 	 * @return 第 n 項的值
 	 * forLoop() 可能會有哪些問題或是不討 caller 喜愛的部份?
-	 * → 相較於 while loop 需要多設立 for ( S1; S2; S3) 所使用的變數來控制 loop 次數
+	 * → 相較於 while loop 需要多設立 for ( S1; S2; S3) 所使用的變數來控制 loop 次數。
+	 * 
+	 * →→ 因為「不討 caller 喜愛的部份」 那這裡 caller 指的應該是人?
+	 * →→ 那我認為 for-loop 的問題大概是 很難用，像我這種低智商的要用 for-loop 寫出較簡便的程式碼，
+	 * →→ 就得花許多時間去想 nested for-loop 上下間彼此變數的關係來控制迴圈次數，
+	 * →→ （還是其實只有我覺得難用＝　＝...）
+	 * →→ 如果在 因為不同輸入而得產生不同迴圈次數 、或者 未能事先知道得做幾次迴圈次數 的情況下會更燒腦，
+	 * →→ 相比 while 迴圈只要設立停止條件並避免無窮迴圈即可，大概是這樣吧。
 	 */
 	private static int forLoop(int a0, int a1, int n) {
 		int result = 0;
