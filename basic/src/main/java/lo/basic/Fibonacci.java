@@ -12,6 +12,7 @@ public class Fibonacci {
 		test_whileLoop(1, 5, 20, 38006);
 		test_whileLoop(100, 101, 1, 100);
 		test_whileLoop(88, 99, 2, 99);
+		test_whileLoop(1, 1, 3, 3);
 	}
 
 	/**
