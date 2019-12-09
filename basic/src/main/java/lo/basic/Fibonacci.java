@@ -62,7 +62,7 @@ public class Fibonacci {
 			result = a0;
 		} else if (n == 2) {
 			result = a1;
-		} else if (n > 3) {
+		} else if (n > 2) {
 			while (i < n) {
 				result = a0 + a1;
 				a0 = a1;
