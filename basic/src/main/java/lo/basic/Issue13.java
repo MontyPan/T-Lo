@@ -7,9 +7,10 @@ public class Issue13 {
 		int[] data = { 5, 5, 6, 6, 78, 78, 78, 9487, 9487, 9487, 9487, 65535 };
 		int[] result = longest(data);
 		int[] result_v4 = longest_v4(data);
+		int[] result_v5 = longest_v5(data);
 		System.out.println(Arrays.toString(result));
 		System.out.println(Arrays.toString(result_v4));
-
+		System.out.println(Arrays.toString(result_v5));
 	}
 
 	/**
@@ -51,6 +52,23 @@ public class Issue13 {
 			if (data[i] != data[ii]) {
 				i = ii;
 			}
+		}
+		return new int[] { number, max_counter };
+	}
+
+	private static int[] longest_v5(int[] data) {
+		int number = 0;
+		int counter = 1;
+		int max_counter = 1;
+		for (int i = 1; i < data.length; i++) {
+			if (data[i] != data[i - 1]) {
+				counter = 1;
+			}
+			if (counter > max_counter) {
+				max_counter = counter;
+				number = data[i];
+			}
+			counter += 1;
 		}
 		return new int[] { number, max_counter };
 	}
