@@ -8,9 +8,11 @@ public class Issue13 {
 		int[] result = longest(data);
 		int[] result_v4 = longest_v4(data);
 		int[] result_v5 = longest_v5(data);
+		int[] result_v6 = longest_v6(data);
 		System.out.println(Arrays.toString(result));
 		System.out.println(Arrays.toString(result_v4));
 		System.out.println(Arrays.toString(result_v5));
+		System.out.println(Arrays.toString(result_v6));
 	}
 
 	/**
@@ -20,7 +22,7 @@ public class Issue13 {
 
 	private static int[] longest(int[] data) {
 		int counter = 1;
-		int max_counter = 0;
+		int max_counter = 1;
 		int number = data[0];
 		for (int i = 0; i < data.length - 1; i++) {
 			if (data[i] == data[i + 1]) {
@@ -57,10 +59,11 @@ public class Issue13 {
 	}
 
 	private static int[] longest_v5(int[] data) {
-		int number = 0;
+		int number = data[0];
 		int counter = 1;
 		int max_counter = 1;
 		for (int i = 1; i < data.length; i++) {
+			counter += 1;
 			if (data[i] != data[i - 1]) {
 				counter = 1;
 			}
@@ -68,8 +71,25 @@ public class Issue13 {
 				max_counter = counter;
 				number = data[i];
 			}
-			counter += 1;
 		}
 		return new int[] { number, max_counter };
+	}
+
+	private static int[] longest_v6(int[] data) {
+		int counter = 0;
+		int number = data[0];
+		int max_counter = 0;
+		int max_number = data[0];
+		for (int i = 0; i < data.length; i++) {
+			counter += 1;
+			if (data[i] == number && counter > max_counter) {
+				max_counter = counter;
+				max_number = number;
+			} else if (data[i] != number) {
+				number = data[i];
+				counter = 1;
+			}
+		}
+		return new int[] { max_number, max_counter };
 	}
 }
