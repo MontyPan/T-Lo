@@ -3,7 +3,7 @@ package lo.basic;
 public class Issue16 {
 
 	static int[] stack = new int[10];
-
+	static int index = 0;
 	public static void main(String[] args) {
 		push(9);
 		push(4);
@@ -18,13 +18,13 @@ public class Issue16 {
 	}
 
 	private static void push(int value) {
-		stack[0] += 1;
-		stack[stack[0]] = value;
+		index += 1;
+		stack[index] = value;
 	}
 
 	private static int pop() {
-		int tmp = stack[stack[0]];
-		stack[0] -= 1;
+		int tmp = stack[index];
+		index -= 1;
 		return tmp;
 	}
 }
