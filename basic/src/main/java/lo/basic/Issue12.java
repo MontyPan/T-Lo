@@ -85,9 +85,9 @@ public class Issue12 {
 				System.out.print(" ");
 			}
 			for (int i2 = 0; i2 < i; i2++) {
-				index = index % 10;
 				System.out.print(list[index]);
 				index += 1;
+				index = index % 10;
 			}
 			System.out.println();
 		}
