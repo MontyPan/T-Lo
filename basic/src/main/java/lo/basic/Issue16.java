@@ -25,17 +25,24 @@ public class Issue16 {
 		index += 1;
 		stack[index] = value;
 		while (index >= stack.length - 1) {
-			int[] tmp = stack.clone();
+			int[] tmp = new int[stack.length];
+			for (int i = 0; i < stack.length; i++) {
+				tmp[i] = stack[i];
+			}
 			stack = new int[stack.length + 10];
-			for (int i= 0; i < tmp.length;i++) {
-				stack[i]=tmp[i];
+			for (int i = 0; i < tmp.length; i++) {
+				stack[i] = tmp[i];
 			}
 		}
-			
 	}
 
 	private static int pop() {
-		int tmp = stack[index];
+		int tmp;
+		while (index < 0) {
+			tmp = 0;
+			index = 0;
+		}
+		tmp = stack[index];
 		index -= 1;
 		return tmp;
 	}
