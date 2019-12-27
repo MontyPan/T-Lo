@@ -22,27 +22,21 @@ public class Issue16 {
 	}
 
 	private static void push(int value) {
-		if (index == stack.length - 1) {
-			index = 0;
-		} else {
-			index += 1;
-		}
-		count_10 += 1;
+		index += 1;
 		stack[index] = value;
+		while (index >= stack.length - 1) {
+			int[] tmp = stack.clone();
+			stack = new int[stack.length + 10];
+			for (int i= 0; i < tmp.length;i++) {
+				stack[i]=tmp[i];
+			}
+		}
+			
 	}
 
 	private static int pop() {
 		int tmp = stack[index];
-		if (count_10 == 0) {
-			tmp = 0;
-		} else {
-			if (index == 0) {
-				index = 9;
-			} else {
-				index -= 1;
-				count_10 -= 1;
-			}
-		}
+		index -= 1;
 		return tmp;
 	}
 
