@@ -6,7 +6,6 @@ public class Issue16 {
 
 	static int[] stack = new int[10];
 	static int index = 0;
-	static int count_10 = 0;
 
 	public static void main(String[] args) {
 		push(9);
@@ -22,14 +21,14 @@ public class Issue16 {
 	}
 
 	private static void push(int value) {
-		index += 1;
 		stack[index] = value;
-		while (index >= stack.length - 1) {
+		index += 1;
+		if (index >= stack.length - 1) {
 			int[] tmp = new int[stack.length];
 			for (int i = 0; i < stack.length; i++) {
 				tmp[i] = stack[i];
 			}
-			stack = new int[stack.length + 10];
+			stack = new int[stack.length * 1000];
 			for (int i = 0; i < tmp.length; i++) {
 				stack[i] = tmp[i];
 			}
@@ -37,14 +36,12 @@ public class Issue16 {
 	}
 
 	private static int pop() {
-		int tmp;
-		while (index < 0) {
-			tmp = 0;
+		index -= 1;
+		if (index < 0) {
+			System.out.println("已經是 data 內最後一筆資料");
 			index = 0;
 		}
-		tmp = stack[index];
-		index -= 1;
-		return tmp;
+		return stack[index];
 	}
 
 	private static void allResetToZero() {
