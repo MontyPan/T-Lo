@@ -24,11 +24,8 @@ public class Issue16 {
 		stack[index] = value;
 		index += 1;
 		if (index >= stack.length - 1) {
-			int[] tmp = new int[stack.length];
-			for (int i = 0; i < stack.length; i++) {
-				tmp[i] = stack[i];
-			}
-			stack = new int[stack.length * 1000];
+			int[] tmp = stack;
+			stack = new int[stack.length * 2];
 			for (int i = 0; i < tmp.length; i++) {
 				stack[i] = tmp[i];
 			}
