@@ -35,7 +35,7 @@ public class Issue16 {
 	private static int pop() {
 		index -= 1;
 		if (index < 0) {
-			System.out.println("¤w¸g¬O data ¤º³Ì«á¤@µ§¸ê®Æ");
+			System.out.println("å·²ç¶“æ˜¯ data å…§æœ€å¾Œä¸€ç­†è³‡æ–™");
 			index = 0;
 		}
 		return stack[index];
