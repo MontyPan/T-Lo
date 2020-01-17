@@ -22,6 +22,8 @@ public class Stack {
 
 	public Stack(int[] args) {
 		stack = args;
+		index = stack.length;
+
 	}
 
 	public void push(int num) {
