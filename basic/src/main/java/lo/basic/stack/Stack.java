@@ -63,15 +63,14 @@ public class Stack {
 		System.out.println("It's last one!");
 	}
 
-	public void showLength() {
-		System.out.println(stack.length);
+	public int showLength() {
+		return stack.length;
 	}
 
 	/**
-	 * A:可以先查看下一個 pop 的值 / 剛剛不小心 push 進去的值是什麼。
-	 * (少打了 -1  Q_Q)
+	 * @return 下一個 pop 的值，但是不從 stack 中移除。
 	 */
-	public void whatIsNext() {
-		System.out.println(stack[index-1]);
+	public int whatIsNext() {
+		return stack[index-1];
 	}
 }
