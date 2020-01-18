@@ -14,6 +14,7 @@ public class Stack {
 
 	private int index = 0;
 	private int[] stack;
+	private int[] tmp;
 
 	public Stack() {
 		stack = new int[10];
@@ -58,7 +59,7 @@ public class Stack {
 	}
 
 	private void addLength() {
-		int[] tmp = stack;
+		tmp = stack;
 		stack = new int[index * 2];
 		for (int i = 0; i < tmp.length; i++) {
 			stack[i] = tmp[i];
@@ -69,7 +70,7 @@ public class Stack {
 	 * 從 tmp 複製到 stack(new) 的內容僅到 index - 1 所指的地方
 	 */
 	private void minusLength() {
-		int[] tmp = stack;
+		tmp = stack;
 		stack = new int[tmp.length / 2];
 		for (int i = 0; i < index; i++) {
 			stack[i] = tmp[i];
