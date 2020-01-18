@@ -1,10 +1,10 @@
 package lo.basic.stack;
 
 public class StackCaller {
+
 	public static void main(String[] args) {
 		Stack stack = new Stack();
-
-		//FIXME
+		
 		stack.push(9);
 		stack.push(4);
 		stack.push(8);
