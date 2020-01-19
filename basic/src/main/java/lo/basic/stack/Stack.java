@@ -28,7 +28,7 @@ public class Stack {
 		stack[index] = num;
 		index += 1;
 		if (index >= stack.length) {
-			addLength();
+			changeLength(stack.length * 2);
 		}
 	}
 
@@ -60,25 +60,14 @@ public class Stack {
 			index = 0;
 		}
 		if (index < stack.length / 3 && stack.length > 10) {
-			minusLength();
+			changeLength(stack.length / 2);
 		}
 		return stack[index];
 	}
 
-	private void addLength() {
+	private void changeLength(int length) {
 		int[] tmp = stack;
-		stack = new int[index * 2];
-		for (int i = 0; i < tmp.length; i++) {
-			stack[i] = tmp[i];
-		}
-	}
-	
-	/**
-	 * 從 tmp 複製到 stack(new) 的內容僅到 index - 1 所指的地方
-	 */
-	private void minusLength() {
-		int[] tmp = stack;
-		stack = new int[tmp.length / 2];
+		stack = new int[length];
 		for (int i = 0; i < index; i++) {
 			stack[i] = tmp[i];
 		}
