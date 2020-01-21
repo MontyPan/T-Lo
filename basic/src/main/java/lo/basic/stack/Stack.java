@@ -57,9 +57,8 @@ public class Stack {
 		if (index < 0) {
 			lastOne();
 			index = 0;
-		}
-		if (index < stack.length / 3 && stack.length > 10) {
-			changeLength(stack.length / 2);
+		} else if (index < stack.length / 3 && stack.length > 10) {
+			changeLength(stack.length / 2 < 10 ? 10 : stack.length / 2);
 		}
 		return stack[index];
 	}
