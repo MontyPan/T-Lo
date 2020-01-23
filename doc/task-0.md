@@ -167,3 +167,13 @@ FlowTraining 的工作流程是模擬與其他人/團隊在 Github 上的作業�
 可能會有不一樣的想法，多方面思考並且進行論點之間的攻防讓事情更完整。
 包括後續的 meeting 開頭檢討也都是。
 
+
+---------------------------------------------------------------------
+
+[提示]: https://github.com/MontyPan/T-Lo/pull/9#pullrequestreview-324281184
+# 延續上次的[提示] #
+
+`DontCareAbout` 是你實作某些目標而建立的，裡面放的都是一些目前為止累積的可以呈現的成果，在 `DontCareAbout` 裡的 FlowTraining 資料夾，也是實作招生這個想法而產生的一點成果。
+`T-Lo` 則因為是還在訓練階段，所以才會對著 `MontyPan`，或許在通過完整的訓練後就會 merge 進去 `DontCareAbout`。
+
+所以 FlowTraining... 往教學面思考，它是要讓學生能按照標準寫作規範做出一個「對於 Git / GitHub / Markdown 完全不了解的情況下去了解」的**成果展示**。
