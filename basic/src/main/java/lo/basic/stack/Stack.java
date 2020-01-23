@@ -14,6 +14,7 @@ public class Stack {
 
 	private int index = 0;
 	private int[] stack;
+	private int lowLimit = 10;
 
 	public Stack() {
 		stack = new int[10];
@@ -54,8 +55,8 @@ public class Stack {
 		if (index < 0) {
 			lastOne();
 			index = 0;
-		} else if (index < stack.length / 3 && stack.length > 10) {
-			changeLength(stack.length / 2 < 10 ? 10 : stack.length / 2);
+		} else if (index < stack.length / 4 && stack.length > lowLimit) {
+			changeLength(stack.length / 2 < lowLimit ? lowLimit : stack.length / 2);
 		}
 		return stack[index];
 	}
