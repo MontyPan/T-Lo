@@ -13,16 +13,10 @@ public class Issue13 {
 		System.out.println(Arrays.toString(result_v4));
 		System.out.println(Arrays.toString(result_v5));
 		System.out.println(Arrays.toString(result_v6));
-
-		int[] bugTest_1 = { 1, 1, 1, 1, 1, 6, 6, 8, 8, };
 		int[] bugTest_2 = { 3, 5, 6, 7, 8, 99, 300 };
-		int[] answer_test_1 = { 1, 5 };
 		int[] answer_test_2 = { 3, 1 };
 		System.out.println("第一個數字數量最多的情況： ");
-		System.out.println("修正前為 ：" + test(longest_v5_beforeFix(bugTest_1), answer_test_1));
-		System.out.println("修正後為 ：" + test(longest_v5(bugTest_1), answer_test_1));
 		System.out.println("數字數量都是 1 的情況： ");
-		System.out.println("修正前為 ：" + test(longest_v5_beforeFix(bugTest_2), answer_test_2));
 		System.out.println("修正後為 ：" + test(longest_v5(bugTest_2), answer_test_2));
 	}
 
@@ -102,23 +96,6 @@ public class Issue13 {
 			}
 		}
 		return new int[] { max_number, max_counter };
-	}
-
-	private static int[] longest_v5_beforeFix(int[] data) {
-		int number = 0;
-		int counter = 1;
-		int max_counter = 1;
-		for (int i = 1; i < data.length; i++) {
-			if (data[i] != data[i - 1]) {
-				counter = 1;
-			}
-			if (counter > max_counter) {
-				max_counter = counter;
-				number = data[i];
-			}
-			counter += 1;
-		}
-		return new int[] { number, max_counter };
 	}
 
 	private static boolean test(int[] value, int[] answer) {
