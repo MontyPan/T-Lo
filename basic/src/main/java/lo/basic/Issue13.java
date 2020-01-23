@@ -9,10 +9,12 @@ public class Issue13 {
 		int[] result_v4 = longest_v4(data);
 		int[] result_v5 = longest_v5(data);
 		int[] result_v6 = longest_v6(data);
+		int[] result_v7 = longest_v7(data);
 		System.out.println(Arrays.toString(result));
 		System.out.println(Arrays.toString(result_v4));
 		System.out.println(Arrays.toString(result_v5));
 		System.out.println(Arrays.toString(result_v6));
+		System.out.println(Arrays.toString(result_v7));
 		int[] bugTest_2 = { 3, 5, 6, 7, 8, 99, 300 };
 		int[] answer_test_2 = { 3, 1 };
 		System.out.println("第一個數字數量最多的情況： ");
@@ -96,6 +98,28 @@ public class Issue13 {
 			}
 		}
 		return new int[] { max_number, max_counter };
+	}
+
+	private static int[] longest_v7(int[] data) {
+		int max = 0;
+		int num = data[0];
+		int counter = 1;
+		for (int i = 1; i < data.length; i++) {
+			if (data[i] == data[i - 1]) {
+				counter += 1;
+				continue;
+			}
+			if (counter > max) {
+				max = counter;
+				num = data[i - 1];
+			}
+			counter = 1;
+		}
+		if (counter > max) {
+			max = counter;
+			num = data[data.length - 1];
+		}
+		return new int[] { num, max };
 	}
 
 	private static boolean test(int[] value, int[] answer) {
