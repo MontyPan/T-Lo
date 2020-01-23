@@ -38,16 +38,11 @@ public class Stack {
 	 * 例如
 	 * <ol>
 	 * 	<li>若 index = 0 仍繼續執行 pop()，將列印警示、將 index 重新 assign 為 0 並傳回 stack[index]。</li>
-	 * 	<li>若 stack.length > 10 且 index < stack.length / 3，將呼叫 changeLength()，使 stack 長度減半。</li>
-	 *  <li>若 stack.length 更變後的最小長度至少為 10。
+	 * 	<li>若 stack.length > {@link #lowLimit} 且 index < stack 總長度一半的 一半 時（即 stack.length / 4），
+	 *      將呼叫 {@link #changeLength(int)}，使 stack 長度減半。
+	 *      長度縮減後保有新長度的 1/2 可以 push，不會立即又改變長度。</li>
+	 *  <li>stack.length 更變後的最小長度至少為 {@link #lowLimit}。
 	 * </ol>
-	 * index 在小於  stack 總長度一半的 2/3 時，改變 stack 的總長度。<br>
-	 * new stack 的長度為 old stack 長度的一半，<br>
-	 * 將 pop 改變長度的臨界點設為 總長度一半的 2/3，（push 是 達到長度最大值後，長度變長兩倍）<br>
-	 * 讓 stack 長度減為一半後，仍保有目前 1/3 的 stack 長度可以 push 而不會立即呼叫 {@link #changeLength(int)}，<br><br>
-	 * 若 pop 和 push 改變長度的臨界點相同，有可能使 stack 長度頻繁增減。<br><br>
-	 * 另外將條件設為 stack.length > 10 才會動作，讓 stack 最小長度不會小於 10。<br>
-	 * 綜合以上兩點能使 stack 長度不會因為重複的 push 後 pop、push 後 pop...而改變長度。
 	 * @return 由 index 指向 stack[] 內第幾個位置的值。
 	 */
 	public int pop() {
