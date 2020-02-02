@@ -32,47 +32,25 @@ public class Abb {
 			return String.valueOf(num);
 		}
 	}
-	
-	/**
-	 * 除以 1000
-	 * @param int
-	 * @return int
-	 */
-	private int divideBy(int num) {
-		while (checkout(num)) {
-			num = num / k;
-		}
-		return num;
-	}
-	
-	/**
-	 * 去除小數點後面的數字
-	 * @param double
-	 * @return int 
-	 */
-	private int doubleToInt(double num) {
-		int result = (int)num;
-		return result;
-	}
 
 	/**
 	 * 依據 count 加上 prefix
+	 * 
 	 * @param String, int
 	 * @return String
 	 */
 	private String prefix(String numString, int count) {
 		return numString + prefix[count];
 	}
-	
+
 	/**
-	 * 檢查傳入數值能不能縮寫，（count= -1 超出 array 範圍）
-	 * -1000 < num < 1000 不能縮寫
+	 * 檢查傳入數值能不能縮寫，（count= -1 超出 array 範圍） -1000 < num < 1000 不能縮寫
 	 */
 	private boolean checkout(double num) {
 		if (num <= -k || num >= k) {
 			return true;
 		} else {
-			return false; 
+			return false;
 		}
 	}
 }
