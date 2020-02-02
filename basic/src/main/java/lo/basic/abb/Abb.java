@@ -1,6 +1,5 @@
 package lo.basic.abb;
 
-
 public class Abb {
 	int k = 1000;
 	String[] prefix = { "k", "M", "G", "T", "P", "E", "Z", "Y" };
@@ -11,7 +10,7 @@ public class Abb {
 	 * 分別代表 10^3、10^6、10^9、10^12、10^15、10^18、10^21、10^24 <br>
 	 * 
 	 * 若已經以 Y 作為 prefix、且顯示的數字超過 long.MAX_VALUE，則數字已 double 顯示。
-	 *  
+	 * 
 	 * @see <a href="https://en.wikipedia.org/wiki/Metric_prefix">國際單位制詞頭 Metric prefix</a>
 	 */
 	public String abb(double num) {
@@ -25,12 +24,25 @@ public class Abb {
 			if (num < Integer.MIN_VALUE || num > Integer.MAX_VALUE) {
 				return prefix(String.valueOf(num), index);
 			} else {
-				int intNum = (int)num; //去除小數點
-				return prefix(String.valueOf(intNum), index);
+				return prefix(decimalPoint(num), index);
 			}
 		} else {
-			return String.valueOf(num);
+			return decimalPoint(num);
 		}
+	}
+
+	/**
+	 * 去除小數點後面數字
+	 */
+	private String decimalPoint(double num) {
+		String numString = String.valueOf(num);
+		char[] numChar = numString.toCharArray();
+		int i = 0;
+		while (numChar[i] != '.') {
+			i++;
+		}
+		String result = String.copyValueOf(numChar, 0, i);
+		return result;
 	}
 
 	/**
