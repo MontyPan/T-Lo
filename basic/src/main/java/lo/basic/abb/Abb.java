@@ -1,21 +1,18 @@
 package lo.basic.abb;
 
 
-/**
- * 給定一個以下  primitive type 的值，回傳以國際單位制詞頭 (Metric prefix) 簡化表示的 String。 <br>
- * 支援的 Prefix 為 k、M、G、T、P、E、Z、Y <br>
- * 分別代表 10^3、10^6、10^9、10^12、10^15、10^18、10^21、10^24 <br>
- * @see <a href="https://en.wikipedia.org/wiki/Metric_prefix">國際單位制詞頭 Metric prefix</a>
- */
-
 public class Abb {
 	int k = 1000;
 	String[] prefix = { "k", "M", "G", "T", "P", "E", "Z", "Y" };
 
-	
 	/**
-	 * @param double
-	 * @return String
+	 * 傳入 double 的值，回傳以國際單位制詞頭 (Metric prefix) 簡化表示的 String。 <br>
+	 * 支援的 prefix 為 k、M、G、T、P、E、Z、Y <br>
+	 * 分別代表 10^3、10^6、10^9、10^12、10^15、10^18、10^21、10^24 <br>
+	 * 
+	 * 若已經以 Y 作為 prefix、且顯示的數字超過 long.MAX_VALUE，則數字已 double 顯示。
+	 *  
+	 * @see <a href="https://en.wikipedia.org/wiki/Metric_prefix">國際單位制詞頭 Metric prefix</a>
 	 */
 	public String main(double num) {
 		
