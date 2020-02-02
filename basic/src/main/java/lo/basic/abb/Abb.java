@@ -14,16 +14,20 @@ public class Abb {
 	 *  
 	 * @see <a href="https://en.wikipedia.org/wiki/Metric_prefix">國際單位制詞頭 Metric prefix</a>
 	 */
-	public String main(double num) {
-		
+	public String abb(double num) {
+
 		if (checkout(num)) {
-			int count = -1;
-			int intNum = doubleToInt(num);
-			while (checkout(intNum)) {
-				intNum = intNum / k;
-				count++;
+			int index = -1;
+			while (index < prefix.length - 1 && checkout(num)) {
+				num = num / k;
+				index++;
 			}
-			return prefix(String.valueOf(intNum), count);
+			if (num < Integer.MIN_VALUE || num > Integer.MAX_VALUE) {
+				return prefix(String.valueOf(num), index);
+			} else {
+				int intNum = (int)num; //去除小數點
+				return prefix(String.valueOf(intNum), index);
+			}
 		} else {
 			return String.valueOf(num);
 		}
