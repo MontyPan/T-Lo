@@ -6,21 +6,21 @@ public class AbbCaller {
 	public static void main(String[] args) {
 		
 		Abb test = new Abb();
+		double[] testArray = new double[8];
+		double y = 1000000000000000000000000d;
+		double z = 1000000000000000000000d;
 		
-		double num1 = 234632346;
-		double num2 = 23123123145343636346454555555555555555555555555555555555555555555555555552312312.1241454352342342235355658769876543567654565434563d;
-		double num3 = 0.23562d;
-		double num4 = 1000;
-		double num5 = -1000;
-		double num6 = -999.99d;
-		double num7 = -13463654747655686585.353455464765878556534114325436544767d;
+		testArray[0] = Integer.MAX_VALUE * y;
+		testArray[1] = Integer.MIN_VALUE * y * 10;
+		testArray[2] = 888888888888888888888888888888888888888888888888888888888888888888888888888888d;
+		testArray[3] = testArray[0] + y;
+		testArray[4] = testArray[1] - z;
+		testArray[5] = 999;
+		testArray[6] = -999.999999999999999999d;
+		testArray[7] = Double.MAX_VALUE;
 		
-		System.out.println(test.main(num1));
-		System.out.println(test.main(num2));
-		System.out.println(test.main(num3));
-		System.out.println(test.main(num4));
-		System.out.println(test.main(num5));
-		System.out.println(test.main(num6));
-		System.out.println(test.main(num7));
+		for (int i = 0; i < testArray.length; i++) {
+			System.out.println("Num" + i + ": " + test.abb(testArray[i]));
+		}
 	}
 }
