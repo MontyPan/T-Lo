@@ -35,13 +35,7 @@ public class Abb {
 	 * 去除小數點後面數字
 	 */
 	private String decimalPoint(double num) {
-		String numString = String.valueOf(num);
-		char[] numChar = numString.toCharArray();
-		int i = 0;
-		while (numChar[i] != '.') {
-			i++;
-		}
-		String result = String.copyValueOf(numChar, 0, i);
+		String result = String.valueOf((int)num);
 		return result;
 	}
 
