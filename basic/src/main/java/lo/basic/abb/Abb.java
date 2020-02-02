@@ -18,7 +18,6 @@ public class Abb {
 	 * @return String
 	 */
 	public String main(double num) {
-//		String numString = String.valueOf(doubleToInt(num));
 		
 		if (checkout(num)) {
 			int count = -1;
@@ -34,9 +33,11 @@ public class Abb {
 	}
 	
 	/**
-	 * 除以 1000，傳回 num 商
+	 * 除以 1000
+	 * @param int
+	 * @return int
 	 */
-	public int divideBy(int num) {
+	private int divideBy(int num) {
 		while (checkout(num)) {
 			num = num / k;
 		}
@@ -45,26 +46,28 @@ public class Abb {
 	
 	/**
 	 * 去除小數點後面的數字
+	 * @param double
+	 * @return int 
 	 */
-	public int doubleToInt(double num) {
+	private int doubleToInt(double num) {
 		int result = (int)num;
 		return result;
 	}
 
 	/**
 	 * 依據 count 加上 prefix
+	 * @param String, int
+	 * @return String
 	 */
-	public String prefix(String numString, int count) {
+	private String prefix(String numString, int count) {
 		return numString + prefix[count];
 	}
 	
 	/**
-	 * 檢查那些數值不能縮寫
-	 * <ul>
-	 * 	<li> -1000 < num < 1000，count 沒有 ++，count= -1 超出 array 範圍<li>
-	 * <ul> 
+	 * 檢查傳入數值能不能縮寫，（count= -1 超出 array 範圍）
+	 * -1000 < num < 1000 不能縮寫
 	 */
-	public boolean checkout(double num) {
+	private boolean checkout(double num) {
 		if (num <= -k || num >= k) {
 			return true;
 		} else {
