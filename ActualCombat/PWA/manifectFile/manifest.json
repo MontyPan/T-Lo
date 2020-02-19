@@ -7,11 +7,7 @@
 	"theme_color": "#665c1b",
 	"icons": [
 		{
-<<<<<<< HEAD:PWA/manifest.json
-			"src": "/PWA/icon/512x512.png",
-=======
 			"src": "../icon/512x512.png",
->>>>>>> e51e4da... 移動 manifest 至 manifestFile:PWA/manifectFile/manifest.json
 			"type": "image/png",
 			"sizes": "512x512"
 		}
