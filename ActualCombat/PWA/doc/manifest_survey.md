@@ -15,23 +15,27 @@
 ## display 的四個 mode##
 
 
-* ##### fullscreen #####
+* fullscreen
 全屏幕，手機常駐在最上面的狀態欄、底下螢幕功能虛擬功能鍵都不會有。
 全屏幕看起來很炫，但是就要讓使用者知道怎麼呼叫出隱藏起來的狀態欄和虛擬功能鍵（螢幕邊緣上下滑），或者在網頁內設置上一頁、關閉網站等網頁版的功能鍵。不然使用者很有可能會不知道怎麼退出...
+![fullscreen](screenshot/full.png)
 
-* ##### standalone #####
+* standalone
 保留有狀態欄和虛擬功能鍵，看起來跟一般 APP 一樣。
+![standalone](screenshot/stand.png)
 
-* ##### minimal-ui #####
+
+* minimal-ui
 畫面是 WebView，常見在其他 app，如 Facebook app 內點擊不屬於 facebook 的網頁連結，預設以 WebView 開啟。
+![minimal-ui](screenshot/webview.png)
 
-* ##### browser #####
+
+* browser
 一般瀏覽器的畫面。
+![browser](screenshot/broswer.png)
 
-![full](screenshot/full.png)
-![stand](screenshot/stand.png)
-![web](screenshot/webview.png)
-![bro](screenshot/broswer.png)
+
+
 
 
 ---------------------------------------------------------------------
@@ -45,15 +49,17 @@
 測試時用了 6 種不一樣大小的 icons size的值、圖檔，
 大小分別為 24 32 64 128 256 512，用模擬器分別選用不同的 Resolution 
 
-* 240x320 Home screen圖示 64x64，Curtain是 128x128
-* 480x800 Home screen圖示 128x128，Curtain是 256x256
-* 1080x1920 Home screen圖示 128x128，Curtain是 512x512
-* 2200x2480 Home screen圖示 128x128，Curtain是 512x512
+|模擬器螢幕大小	|Home screen 上匹配到的 icon size	|Slash screen 上匹配到的 icon size	|
+|:--------------|:----------------------------------|:-----------------------------------
+|240x320		|64x64								|128x128							|
+|480x800		|128x128							|256x256							|
+|2200x2480		|128x128							|512x512							|
+|1080x1920		|128x128							|512x512							|
 
 在 add to Home screen，sizes 的值或者圖片本身大小小於 48x48 都無法正常顯示。
 **48**是個 **magic number**，在找最後一個問題答案時才發現這個驚人的事情，[Audit: icon size coverage] 和下面一樣）
 
-
+![sizeTooSmall](screenshot/cantDisplay.png)
 
 ---------------------------------------------------------------------
 
