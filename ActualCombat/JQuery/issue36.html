@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JQuery 基礎訓練</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+	<img id="img"
+		src="https://image.cache.storm.mg/styles/smg-800x533-fp/s3/media/image/2018/03/26/20180326-104523_U10834_M395197_27ea.jpg"
+		alt="monkey">
+
+	<p class="describe">這是猴子</p>
+
+	<button id="button">我是按鈕</button>
+
+	<script>
+		var onOff = true;
+		var monkey = ["這是猴子", "https://image.cache.storm.mg/styles/smg-800x533-fp/s3/media/image/2018/03/26/20180326-104523_U10834_M395197_27ea.jpg"];
+		var bigMonkey = ["這是猩猩", "https://i2.kknews.cc/SIG=2qmkg2o/24310004003s0o753q9n.jpg"]
+
+		$("#button").click(
+			function () {
+				if (onOff) {
+					onOff = false;
+					$("#img").attr({ src: bigMonkey[1] }).ready($(".describe").text(bigMonkey[0]));
+				} else {
+					onOff = true;
+					$("#img").attr({ src: monkey[1] }).ready($(".describe").text(monkey[0]));
+				}
+			}
+		);
+	</script>
+</body>
+
+</html>
