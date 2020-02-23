@@ -22,16 +22,15 @@
 
 	<script>
 		var onOff = 0;
-		var monkey = [
-			["這是猴子", "https://image.cache.storm.mg/styles/smg-800x533-fp/s3/media/image/2018/03/26/20180326-104523_U10834_M395197_27ea.jpg"],
-			["這是猩猩", "https://i2.kknews.cc/SIG=2qmkg2o/24310004003s0o753q9n.jpg"]
-		]
+		var monkey = ["這是猴子", "https://image.cache.storm.mg/styles/smg-800x533-fp/s3/media/image/2018/03/26/20180326-104523_U10834_M395197_27ea.jpg",
+			"這是猩猩", "https://i2.kknews.cc/SIG=2qmkg2o/24310004003s0o753q9n.jpg"]
 
 		$("#change").click(
 			function () {
-				onOff = (onOff + 1) % 2;
-				$("#pic").attr({ src: monkey[onOff][1] }).on("load", function () { $(".describe").text(monkey[onOff][0]) });
-			})
+				onOff = (onOff + 2) % monkey.length;
+				$("#pic")[0].src = monkey[onOff + 1];
+				$("#pic").on("load", function () { $(".describe").text(monkey[onOff]) })
+			});
 
 
 	</script>
