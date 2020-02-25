@@ -16,24 +16,29 @@
 		src="https://image.cache.storm.mg/styles/smg-800x533-fp/s3/media/image/2018/03/26/20180326-104523_U10834_M395197_27ea.jpg"
 		alt="monkey">
 
-	<p class="describe">這是猴子</p>
+	<p class="describe"></p>
 
 	<button id="change">我是按鈕</button>
 
 	<script>
 		var onOff = 0;
-		var monkey = [{describe : "這是猴子", src : "https://image.cache.storm.mg/styles/smg-800x533-fp/s3/media/image/2018/03/26/20180326-104523_U10834_M395197_27ea.jpg"},
-			{describe : "這是猩猩", src : "https://i2.kknews.cc/SIG=2qmkg2o/24310004003s0o753q9n.jpg"}]
+		var monkey = [
+			{ describe: "這是猴子", src: "https://image.cache.storm.mg/styles/smg-800x533-fp/s3/media/image/2018/03/26/20180326-104523_U10834_M395197_27ea.jpg" },
+		{ describe: "這是猩猩", src: "https://i2.kknews.cc/SIG=2qmkg2o/24310004003s0o753q9n.jpg" }
+		]
 
-		function changetext (){ $(".describe").text(monkey[onOff].describe) };
 
-		$("#change").click(
-			function () {
+
+		$("#change").on("click",function () {
 				onOff = (onOff + 1) % monkey.length;
 				$("#pic")[0].src = monkey[onOff].src;
-				$("#pic").on("load", changetext);
-			});
+				}	
+		);
 
+		$("#pic").on("load", function () {
+			$(".describe").text(monkey[onOff].describe);
+			}
+		);
 
 	</script>
 </body>
